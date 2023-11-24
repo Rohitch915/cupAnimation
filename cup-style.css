@@ -1,0 +1,137 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    min-height: 100vh;
+    background-color: lightskyblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cup {
+    position: relative;
+}
+
+.cup-body {
+    position: relative;
+    width: 250px;
+    height: 230px;
+    background-color: whitesmoke;
+    border-bottom-left-radius: 45%;
+    border-bottom-right-radius: 45%;
+    box-shadow: 0px 30px 15px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+
+}
+
+.cup-top {
+    position: absolute;
+    top: -27px;
+    width: 250px;
+    height: 50px;
+    background-color: whitesmoke;
+    border-radius: 50%;
+
+}
+
+.smoke {
+    position: absolute;
+    padding: 0px 20px;
+    display: flex;
+    z-index: 10;
+}
+
+.smoke span {
+    position: relative;
+    bottom: 50px;
+    display: block;
+    margin: 0px 2px 50px;
+    min-width: 8px;
+    height: 120px;
+    background-color: #fff;
+    border-radius: 50%;
+    animation: vapour 5s linear infinite;
+    filter: blur(8px);
+    animation-delay: calc(var(--i) * -0.5s);
+}
+
+@keyframes vapour {
+
+    0% {
+        transform: translateY(0) scaleX(1);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    50% {
+        transform: translateY(-150px) scaleX(5);
+    }
+
+    95% {
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(-300px) scaleX(10);
+    }
+
+
+}
+
+.cup-bottom {
+    position: absolute;
+    bottom: -28%;
+    right: -35%;
+    width: 400px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: whitesmoke;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    box-sizing: content-box;
+    padding: 5px;
+    border: 5px solid white;
+}
+
+.cup-handle {
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    border: 18px solid whitesmoke;
+    border-left: 18px solid transparent;
+    border-bottom: 18px solid transparent;
+    position: absolute;
+    top: 50px;
+    right: -51px;
+    transform: rotate(47deg);
+}
+
+.cup-hole {
+    width: 240px;
+    height: 40px;
+    background-color: white;
+    position: absolute;
+    z-index: 5;
+    left: 5px;
+    border-radius: 50%;
+    top: -22px;
+    overflow: hidden;
+    background: linear-gradient(to right, #f9f9f9, #d9d9d9);
+}
+
+.tea {
+    width: 240px;
+    height: 40px;
+    background-color: burlywood;
+    position: absolute;
+    border-radius: 50%;
+
+    top: 15px;
+}
